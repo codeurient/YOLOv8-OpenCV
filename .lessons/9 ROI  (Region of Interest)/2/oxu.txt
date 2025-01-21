@@ -1,0 +1,1 @@
+1) İlk öncə oxu - roi_selector.py faylını

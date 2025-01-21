@@ -1,0 +1,10 @@
+1) 9 nömrəli dərsdə, 720-nin 1280-na olan ölçü ilə ROİ təyin etmişdik. 
+
+
+
+2) 10 nömrəli dərsdə ölçünü RESİZE etdikdən sonra ROİ -ni təkrar təyin etmək lazımdır. 
+Bunun üçün ROİ_SELECTOR.PY faylında Frame-mi yenidən formalaşdırmalıyıq.
+
+
+
+3) İlk öncə DETECT_LANE.PY faylını oxu. Sonra isə, ROİ_SELECTOR.PY faylını oxu. 
