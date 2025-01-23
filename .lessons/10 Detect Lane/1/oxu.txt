@@ -1,1 +1,0 @@
-1) detect_lane.py adında fayl yaradırıq. Bu faylda yazacağımız alqaritma ilə, koordinatlardan istifadə edərək ROİ -ni çıxardasıyıq.

@@ -1,0 +1,5 @@
+1) İndi roi_selector.py faylından istifadə edərək ROİ -mizi təyin edək və əldə etdiyimiz koordinatları yadda saxlayaq. 
+Koordinatlar şəklin üzərində qeyd edilmiş olacaq. Şəklə baxaraq oradan lazım olan koordinatları əldə edə bilərik. 
+
+
+2) Sonra detect_lane.py faylına keçərək, coordinates.png şəklindən koordinatlarımızı köçürək. 

@@ -1,1 +1,0 @@
-Nöqtələrin görünməməsi üçün kodu bir balaca dəyişdirə bilərik. 
