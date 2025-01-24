@@ -1,0 +1,39 @@
+1) Google Colab üzərində `Lane Segmentation` faylını işə salmaq üçün `Şəkil 1` -də olduğu kimi `Play` düyməsini basırıq və `Google Drive` -a 
+giriş etməsini təsdiqləyirik. 
+
+
+
+
+2) VScode üzərində işləyərkən bunu etməyə ehtiyac yoxdur. 
+
+
+
+
+3) pwd   - Bu, əməliyyat sistemi kamandıdır. Hal-hazırda hansı qovluq içində olduğumuzu öyrənmək üçün istifadə edilir. 
+
+
+
+
+4) cd - Bu da əməliyyat sistemi kamandıdır. Bir qovluqdan başqa qovluğa keçid etmək üçün istifadə edilir. 
+Bu əmri terminalda yazaraq `Lane Detection - Deep Learning` qovluğuna keçid edə bilərik. 
+
+`Lane Detection - Deep Learning` qovluğuna, CD əmri ilə daxil olmaq üçün, `Şəkil 2` -də olduğu kimi bu qovluğun yerləşdiyi yeri taparaq `Copy Path` 
+yazısına klikləyib `Şəkil 3` həmin qovluğun yolunu kopyalaya bilərik. 
+
+
+NOT: Google drive içində `Self Driving Car Project` qovluğunu `YOLOv8 Projects` qovluğuna yerləşdirin. 
+
+
+
+
+5) `Lane Detection - Deep Learning` qovluğunun yolunu kopyaladıqdan sonra `Play` düyməsini basaraq bu qovluğa daxil oluruq. Şəkil 4
+
+
+
+
+
+
+
+
+NOT: Lane Segmentation.ipynb      faylını Google Colab üzərində işə salmağımızın səbəbi, odurki, Colab mühidi kitabxanaları daha rahat tanıyır və bir kitabxananı
+digər kitabxana ilə problemsiz uyğunlaşdıra bilir.  VScode üzərində bunu etməyə çalışdıqda fərqli xətalar bizi bezdirəcək. 

@@ -1,0 +1,13 @@
+1) VScode içində və Google Drive içində `Self Driving Car Project` adında qovluq yaradırıq.
+
+
+2) Sonra bu qovluq içində `Lane Detection - Deep Learning` adında qovluq yaradırıq. 
+
+
+3) Hələki, Google Drive içində işləyəsiyik.....
+
+
+4) `Lane Detection - Deep Learning`     qovluğu içində    `inference`     adında qovluq yaradırıq.  (Şəkil 1)
+
+
+5) `test.mp4`    videosunu    `inference`     qovluğuna yerləşdiririk.  (Şəkil 2)

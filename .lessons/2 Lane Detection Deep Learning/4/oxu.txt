@@ -1,0 +1,7 @@
+1) config.yaml və dataset zip faylını `data` qovluğuna yerləşdiririk. Şəkil 1
+
+
+
+
+
+2) Google Drive -da olan    `Lane Segmentation.ipynb`    faylını 2 dəfə klikləyərək açırıq. Şəkil 2

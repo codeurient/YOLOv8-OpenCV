@@ -1,0 +1,16 @@
+1) `Lane Detection - Deep Learning` qovluğunda indidə `data` adında qovluq yaradırıq. (Şəkil 1)
+
+Həmin qovluq içində dataset və konfiqurasiya faylları olacaq. 
+
+
+
+
+
+
+2) `Lane Detection - Deep Learning` qovluğuna əlimizdə mövcud olan hazır Colab segmentation -nını yerləşdirərək istifadə edəsiyik.  Şəkil 2
+Bu colab segmentation dediyimiz şey `Lane Segmentation.ipynb` faylıdır. Bu faylda hazır kodlar var. 
+
+
+
+Sonra bu faylı Colab üzərində açmaq üçün Colab plaginini install etməliyik. İnstall etdikdən sonra fayla 2 dəfə klikləsək həmin fayl avtomatik olaraq
+Colab networkunda açılacaq. (Şəkil 3 və 4)
