@@ -1,0 +1,72 @@
+Bu kodda,
+
+a) cv2 (OpenCV)
+b) imutils 
+c) Google Colab  üçün xüsusi olaraq hazırlanmış `cv2_imshow` kitabxanaları istifadə edilir. 
+
+
+
+1) Kodun əsas məqsədi bir görüntü faylını oxumaq, ölçüsünü yenidən dəyişdirmək və nəticəni göstərə bilməkdir.
+- cv2 (OpenCV):   Görüntülərlə işləmək üçün istifadə olunur. OpenCV görüntü oxuma, göstərmə və manipulyasiya üçün geniş funksiyalar təqdim edir.
+- imutils:        Görüntülərin ölçüsünü dəyişmək, döndərmək kimi ümumi işlər üçün istifadə olunan sadə bir kitabxanadır.
+- cv2_imshow:     Google Colab mühitində görüntü göstərmək üçün istifadə olunur (çünki adi cv2.imshow() funksiyası Colab mühitində işləməz).
+
+
+
+
+
+
+
+2) Görüntü Faylının Oxunması
+path = "runs/segment/predict/generala-drapsina-street.jpg" 
+img  = cv2.imread(path)
+
+- path:             Görüntü faylının tam yolunu göstərir.
+- cv2.imread(path): Məlumatı, göstərilən fayldan oxuyur və bunu bir Numpy massivinə çevirir.
+- img:              Görüntü məlumatlarının saxlandığı dəyişəndir.
+
+
+
+
+
+
+
+3) Görüntü Ölçülərinin Göstərilməsi
+print("[INFO] - 1: ", img.shape)
+
+- img.shape:      Görüntünün ölçülərini qaytarır:
+(h, w, c) —     h: hündürlük, w: en, c: rəng kanalları.
+
+
+
+
+
+
+
+4) Görüntü Ölçüsünün Yenidən Dəyişdirilməsi
+img = imutils.resize(img, width=640)
+
+- imutils.resize: Görüntünün eni (width=640) 640 piksel olaraq təyin edilir. Hündürlük nisbəti qorunaraq avtomatik hesablana bilər.
+Yenidən ölçüləndirilmiş görüntü eyni img dəyişənində saxlanır.
+
+
+
+
+
+
+
+
+6) print("[INFO] - 2: ", img.shape)
+Yeni ölçünü təkrar göstəririk
+
+
+
+
+
+
+
+
+7) Görüntünün Göstərilməsi
+cv2_imshow(img)
+
+- cv2_imshow: Görüntünü Google Colab mühitində göstərmək üçün istifadə olunur.

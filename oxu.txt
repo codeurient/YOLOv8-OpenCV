@@ -1,0 +1,3 @@
+--hide_labels=True    və   --boxes=False      parametrləri birlikdə istifadə olunduqda:
+    Obyektlərin adları və ehtimal dərəcələri gizlədilir.
+    Obyektlərin ətrafındakı sərhəd qutuları göstərilməz.
