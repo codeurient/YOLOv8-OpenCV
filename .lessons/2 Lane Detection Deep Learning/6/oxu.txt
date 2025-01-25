@@ -1,0 +1,105 @@
+1) !yolo segment predict model=yolov8l-seg.pt source="https://media-cdn.tripadvisor.com/media/photo-s/15/26/b8/f3/generala-drapsina-street.jpg"
+
+
+
+Bu əmr YOLOv8 modelindən istifadə edərək şəkil üzərində obyektlərin seqmentasiyasını həyata keçirmək üçündür. 
+Gəlin əmrə və onun parametrlərinə bir az daha ətraflı baxaq:
+
+
+a) !yolo:   Bu, ultralytics kitabxanasında YOLO əmrlərini işə salmaq üçün istifadə olunur.
+
+
+
+
+
+
+
+
+
+b) segment: Bu, obyekt seqmentasiyası rejimini işə salır. Obyekt seqmentasiyası yalnız obyektlərin təkcə sərhəd qutuları 
+ilə müəyyən edilməsi deyil, həm də obyektin piksel səviyyəsində seqmentasiya edilməsini nəzərdə tutur.
+
+Seqmentasiya kompüter görməsində istifadə olunan bir texnikadır və onun əsas məqsədi, görüntü üzərində obyektlərin dəqiq sərhədlərini müəyyən etməkdir.
+
+Seqmentasiya növləri:
+        1) Obyekt Seqmentasiyası (Instance Segmentation): Hər bir obyektin şəkil içindəki konturlarını (sərhədlərini) piksel səviyyəsində dəqiqliklə 
+           ayırır. Məsələn, bir şəkildə həm avtomobil, həm insan varsa, bu texnika həmin obyektlərin hər biri üçün konturlar çəkir.
+
+        2) Semantic Segmentation: Bu texnikada oxşar növ obyektlərin piksel səviyyəsində müəyyən edilməsi hədəflənir. Məsələn, bütün "insanlar" vahid 
+           bir sinif kimi (bir rənglə) qeyd olunur.
+
+Sadə Dildə desək: Seqmentasiya – şəkli hissələrə bölməkdir. Hər bir pikselin hansı obyektə aid olduğunu göstərir.
+
+
+
+
+
+
+
+
+c) predict: Bu rejim modelin verilmiş şəkil və ya video üzərində proqnozlaşdırma aparmasını ifadə edir.
+
+   Proqnozlaşdırma (Prediction) modelin daxil olan məlumat (şəkil və ya video) əsasında nəticələr çıxarması deməkdir. 
+   Kompüter görməsi sahəsində proqnozlaşdırma belə işləyir:
+        1) Model nə öyrənir? Model əvvəlcədən minlərlə şəkil üzərində öyrədilir. Məsələn:
+                - İnsanlar, avtomobillər, heyvanlar və s. kimi obyektləri tanımağı öyrənir.
+                - Hər obyektə aid olan konturları və xüsusiyyətləri anlamağı bacarır. 
+
+        2) Proqnozlaşdırma zamanı:
+                - Modelə bir şəkil təqdim edilir.
+                - Model şəkildəki obyektləri analiz edir.
+                - Nəticə olaraq: Hər obyektin adı (məsələn, "avtomobil", "piyadalar"). Obyektlərin sərhədləri və ya konturları.
+
+Proqnozlaşdırma – modelin şəkili təhlil edərək nəticələr çıxarmasıdır. Bu nəticələrə obyektlərin növləri və yerləşdiyi yerlər daxildir.
+
+
+
+
+
+
+
+d) model=yolov8l-seg.pt: Bu parametr hansı modeli istifadə edəcəyinizi göstərir:
+
+
+
+
+
+
+
+
+
+e) yolov8l-seg.pt: YOLOv8 modelinin "large" (böyük) versiyasıdır və seqmentasiya üçün əvvəlcədən öyrədilmişdir.
+source="URL": Bu parametr YOLO modelinə hansı şəkli analiz etməli olduğunu bildirir. source olaraq şəkilin URL-dən istifadə edilir:
+
+Bu halda, TripAdvisor saytından olan küçə şəkili istifadə olunur.
+
+
+
+
+
+
+
+Qısaca bu əmr, URL ilə təyin etdiyimiz şəkil üzərindəki obyektləri proqnozlaşdıraraq piksel səviyyəsində seqmentasiya edir. 
+Başqa bir sözlə desək, model şəkli avtomatik təhlil edir və həmin şəkil üzərində olan maşın, ağac, insan və.s tanıyaraq onları işarətləyir. 
+
+
+
+
+
+
+
+
+
+NOT: Bu əmr işə düşdükdə, avtomatik olaraq aşağıdakı qovluq və fayllar yaradılır: 
+    1) runs qovluğu içindəkilər ilə birlikdə    - bu qovluqda seqmentasiya edilmiş şəkli görə bilərik. 
+    2) yolov8l-seg.pt faylı
+    3) generala-drapsina-street.jpg şəkli 
+
+
+
+
+VScode içində olan `Lane Detection - Deep Learning` qovluğunda həmin fayl fə qovluqlar yaradılmır. Çünki VScode üzərində işləmirik. 
+Yenədə hər ehtimala qarşılıq Google Drive -dan endirib VScode içinə yerləşdirəcəm ki, birdən nəsə üçün lazım olar. 
+
+Əgər Vscode üzərində işləmək istəsəz onda Vscode terminalda lazımlı kitabxanaları endirmək lazımdır. Sonra .py formatında bir fayl yaradaraq kodları orada
+yazmalıyıq.
