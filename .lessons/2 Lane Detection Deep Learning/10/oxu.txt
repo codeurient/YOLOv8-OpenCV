@@ -1,0 +1,1 @@
+1) !unzip data/dataset.zip -d ./data            - indi bu əmri işə salırıq və zip faylını açırıq  -  Şəkil 1

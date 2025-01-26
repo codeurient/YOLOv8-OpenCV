@@ -1,0 +1,43 @@
+1) data (Lane Detection - Deep Learning\data)   qovluğu içində birdənə konfiqurasiya faylı var - Şəkil 1
+
+Bu kod YOLO formatında verilən bir dataset konfiqurasiya faylıdır (adətən .yaml və ya .yml formatında yazılır).
+
+
+
+
+
+
+Bu konfiqurasiya faylı,   `dataset`    qovluğunun yolunu göstərir. Əgər yol yanlış olarsa onda dataset qovluğunun yolunu
+təkrar kopyalayaraq   `path`   sözünün önünə yaza bilərsiz.  Şəkil 2
+
+
+
+
+a) path - dataset qovluğunun yolunu göstərir. 
+
+
+b) train: images/train - Bu, modelin təlim (training) üçün istifadə edəcəyi görüntü (image) fayllarının yolunu göstərir.
+Datasetin təlim üçün nəzərdə tutulmuş şəkilləri images/train qovluğunda yerləşir. 
+Yəni, əlimizdə olan bəzi şəkillər ilə modeli öyrədəsiyik. Bunun üçün birdən çox fərqli şəkil istifadə edilir.
+Şəkillər həm yaxşı həm pis görüntüdə olur ki, model hər iki çətin vəziyyəti analiz edərək öyrənsin ki, məsələn,
+pis hava şəraitində belə yol işarətlərini rahatlıqla seçə bacarsın. 
+
+
+c) val: images/val - Bu, modelin doğrulama (validation) mərhələsində istifadə edəcəyi görüntü fayllarının yolunu göstərir.
+Doğrulama zamanı model öyrəndiyi məlumatları test etmək üçün images/val qovluğundakı şəkillərdən istifadə edəcək.
+Yəni, `train` ilə öyərndi, sonra `val` ilə test edir ki, görsün tapa bacarırmı.
+
+
+d) test: images/test - Bu, modelin test mərhələsində (nəticələrin qiymətləndirilməsi) istifadə edəcəyi görüntü fayllarının 
+yolunu göstərir. Yəni bu qovluqdakı şəkillər model tam öyrədildikdən sonra onun performansını yoxlamaq üçün istifadə olunur.
+
+
+e) names: ['lane'] - Burada names modelin tanımalı olduğu obyektlərin siyahısını ehtiva edir.
+- Bu datasetdə model yalnız bir obyekt tanıyır: lane (yəni, yol zolaqları).
+- names siyahısı, obyektlərin identifikator nömrələri ilə əlaqəlidir. Məsələn: lane obyektinin ID-si avtomatik olaraq 0 olacaq.
+
+Əgər bir neçə obyekt olsa idi, siyahı belə görünə bilərdi: names: ['lane', 'car', 'sign']
+
+
+
+Qısası: Bu layihədə model yalnız lane obyektini tanımaq üçün öyrədilir.

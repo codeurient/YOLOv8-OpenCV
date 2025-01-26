@@ -1,0 +1,29 @@
+!unzip data/dataset.zip -d ./data:  bu əmr Linux və ya Unix əsaslı sistemlərdə (məsələn, Colab və ya terminalda) ZIP fayllarını açmaq üçün istifadə olunur.
+
+
+
+1) !    - Bu işarə, Jupyter Notebook və ya Google Colab kimi mühitlərdə Python kodunun içindən bir sistem əmrini (məsələn, unzip) işlətmək üçün istifadə edilir.
+        Yəni, bu əmrin Python deyil, sistem (OS) əmrini icra etdiyini göstərir.
+
+
+
+2) unzip    - ZIP formatlı sıxılmış faylları açmaq üçün istifadə olunan bir əmrdır. ZIP faylın içindəki məzmunu çıxarır (extract edir).
+
+
+
+
+3)data/dataset.zip      - Bu, açılacaq ZIP faylının yolunu (path) göstərir. Burada faylın adı dataset.zip, yerləşdiyi qovluq isə data-dır.
+
+
+
+4) -d ./data            - Bu, ZIP faylının açılacağı hədəf qovluğunu (destination directory) təyin edir. -d flag-i "hədəf qovluğunu" göstərir.
+                        ./data hədəf qovluğunun mövcud qovluq (./, yəni "cari qovluq") içində yerləşən data qovluğunda olduğunu bildirir.
+                        Məsələn, ZIP faylın içindəki bütün fayllar və qovluqlar data/ qovluğuna çıxarılacaq.
+
+                        Mövcud qolvuq budur: /content/gdrive/MyDrive/YOLOv8 Projects/Self Driving Car Project/Lane Detection - Deep Learning
+
+                        Mövcud qovluğu öyrənmək üçün təkrar bu əmri yaza bilərsiz: %pwd         - Şəkil 1
+
+                        Elə ola bilərki birdən sistem atsın və sonra bu `pwd`  əmrini sistem atdıqdan sonra işə salaq. O zaman, mövcud qovluq 
+                        /content  olacaq.  Bunu düzəltmək üçün, Lane Segmentation.ipynb  faylındakı kodları (səhifəni) yuxarı sürüşdürərək, %cd
+                        əmrini işə salmaq lazımdır.     - Şəkil 2

@@ -1,0 +1,17 @@
+!yolo segment predict model=yolov8l-seg.pt source="https://media-cdn.tripadvisor.com/media/photo-s/15/26/b8/f3/generala-drapsina-street.jpg" --hide_labels=True --boxes=False
+
+
+
+
+
+Yuxarıdakı əmri işə saldıqda,  `predict`  adında qovluq artıq mövcud olduğu üçün   `predict2`  adında qovluq yaradılacaq. 
+
+
+
+--hide_labels=True    və   --boxes=False      parametrləri birlikdə istifadə olunduqda:
+    Obyektlərin adları və ehtimal dərəcələri gizlədilir.
+    Obyektlərin ətrafındakı sərhəd qutuları göstərilməz.
+
+
+
+`predict2` qovluğunda isə `Şəkil 2` -dəki görüntü olacaq. 
