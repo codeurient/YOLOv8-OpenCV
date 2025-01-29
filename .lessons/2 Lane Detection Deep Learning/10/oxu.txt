@@ -1,1 +1,33 @@
 1) !unzip data/dataset.zip -d ./data            - indi bu əmri işə salırıq və zip faylını açırıq  -  Şəkil 1
+
+
+
+dataset   qovluğunun içində, 2 dənə qovluq var:
+    a) images
+    b) labels
+
+
+- images qolvuğunun içində isə 3 dənə fərqli qovluq var. Bu qovluqlar haqqında növbəti 11ci dərsdə ətraflı qeyd edilmişdir.
+- labels qovluğunun içində isə `images` qovluğunun içindəki `test`, `train` və `val` qovluqlarında olan şəkillərin koordinatları var. 
+
+
+
+
+Burada izah etmək istədiyim mövzu həmin şəkillər və koordinatların haradan və necə əldə edildiyi ilə bağlıdır. 
+Bu şəkillər əvvəl sadəcə 1 dənə idi. Xüsusi proqram vasitəsi ilə həmin şəkillər artırıldı. Buna Data Augmentation deyilir. 
+
+`Data Augmentation` (məlumat artırma kitabxanasıdır) süni zəka və maşın öyrənmə sahələrində istifadə olunan bir texnikadır. 
+Məqsəd mövcud məlumat dəstini süni olaraq genişləndirmək və modelin daha yaxşı öyrənməsi üçün müxtəliflik yaratmaqdır.
+
+Albümentasiyalar (Augmentations) nələrdir?
+    - Döndürmə              (Rotation)                : Şəkili müəyyən dərəcə ilə sağa və ya sola döndürmək.
+    - Güzgü əksi            (Flip)                    : Şəkili üfüqi və ya şaquli şəkildə tərsinə çevirmək.
+    - Kəsmə                 (Crop)                    : Şəkilin bir hissəsini kəsərək kiçik hissələr yaratmaq.
+    - Zoomlama              (Zoom)                    : Şəkili böyütmək və ya kiçiltmək.
+    - Parlaqlıq və kontrast (Brightness and Contrast) : Şəkilin parlaqlığını və kontrastını dəyişmək.
+    - Şəkil bükmə           (Warping)                 : Şəkilin formasını dəyişmək (perspektiv transformasiyası).
+    - Gürültü əlavə etmək   (Adding Noise)            : Şəkilə təsadüfi "səs-küy" əlavə edərək məlumatı çətinləşdirmək.
+    - Rəng dəyişiklikləri   (Color Jittering)         : Şəkilin rənglərini dəyişmək (məsələn, ton, doymuşluq, parlaqlıq).
+
+
+

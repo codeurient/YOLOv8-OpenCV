@@ -1,0 +1,84 @@
+!yolo segment train model=yolov8l-seg.pt data=data/config.yaml imgsz=640 workers=8 batch=8 device=0 epochs=250 name=yolov8_lane_segmentation
+
+
+
+
+
+
+Yuxarıdakı kod YOLOv8 modelindən istifadə edərək təlim (training) prosesini başladır. Bu əmrin məqsədi, verilən `dataset` üzərində YOLOv8 
+Segmentasiya Modelini öyrətməkdir. Gəlin parametr-parametr analiz edək. Hər bir parametrin nə iş gördüyünü izah edək:
+
+
+1) !yolo segment train
+    - yolo:     YOLOv8 alətini çağırır.
+    - segment:  Bu, YOLOv8-in "segmentation" rejimində işlədiyini bildirir (yəni obyektləri sadəcə sərhəd qutuları 
+                ilə deyil, piksel səviyyəsində təyin edir).
+    - train:    Bu əmr, modelin təlim üçün başladığını göstərir.
+
+
+
+2) model=yolov8l-seg.pt
+    - model:          Hansı modelin istifadə olunacağını təyin edir.
+    - yolov8l-seg.pt: YOLOv8-in "Large" (Böyük) versiyasıdır (ən çox parametri və hesablama gücü tələb edən versiya).
+
+
+
+3) data=data/config.yaml
+    - data:         Datasetin və obyektlərin (classes) konfiqurasiya faylını təyin edir.
+    - config.yaml:  Bu fayl datasetin strukturu (train, val, test yolları) və obyektlərin siyahısını ehtiva edir.
+
+
+
+4) imgsz=640
+    - imgsz:  Modelə daxil edilən şəkillərin ölçüsünü təyin edir.
+    - 640:    Hər bir görüntü təlimdən əvvəl 640x640 piksel ölçüsünə endirilir (ölçüsü dəyişdirilir).
+    - Daha kiçik şəkillər təlim prosesini sürətləndirir, amma çox kiçik şəkillər detalların itirilməsinə səbəb ola bilər.
+
+
+
+5) workers=8
+    - workers:  Datasetdən məlumatların yüklənməsi üçün istifadə ediləcək işçi proseslərin (CPU thread-lərin) sayını təyin edir.
+    - 8:        Eyni anda 8 paralel proses məlumat yükləyəcək, bu da təlim sürətini artırır.
+
+
+
+6) batch=8
+    - batch: Hər bir təlim iterasiyasında modelin neçə şəkli eyni anda emal edəcəyini bildirir.
+    - 8:     Hər bir təlim mərhələsində 8 şəkil modelə ötürüləcək.
+
+
+
+7) device=0
+    - device: Hansı cihazın istifadə olunacağını təyin edir.
+    - 0:      İlk GPU (CUDA cihazı) istifadə olunacaq.
+    - Əgər CPU istifadə ediləcəksə, device=cpu kimi təyin edilə bilər.
+
+
+
+8) epochs=250
+    - epochs:   Təlim mərhələlərinin ümumi sayını bildirir.
+    - 250:      Model dataset üzərində 250 tam dövr (epoch) keçərək öyrənmə aparacaq. Daha çox epoch, ümumiyyətlə daha yaxşı 
+                performans təmin edə bilər, amma artıq təlim "overfitting"-ə səbəb ola bilər.
+
+Overfitting maşın öyrənməsində və dərin öyrənmədə modelin təlim verilən məlumatlara həddindən artıq yaxşı uyğunlaşmasıdır. 
+Bu, modelin təlim məlumatlarını çox dəqiq öyrəndiyi üçün yeni və görmədiyi verilənlər üzərində zəif performans göstərməsinə səbəb olur.
+
+Qısaca izah: Model təlim məlumatlarını əzbərləyir, ümumiləşdirmək əvəzinə. Nəticədə, yalnız təlim məlumatlarında yaxşı işləyir, amma 
+test və real dünya məlumatlarında zəif nəticələr verir.
+
+
+
+9) name=yolov8_lane_segmentation
+    - name: Təlim prosesinin nəticələrinin saxlanacağı qovluğun adını təyin edir.
+    - yolov8_lane_segmentation: Təlim nəticələri (model şəkilləri, məzmun qrafikləri və s.) bu qovluqda saxlanacaq.
+
+
+
+
+NOT: Bu əmri işə saldıqdan sonra aşağıdakı fayl və qovluqlar avtomatik olaraq yaradıldı. 
+a) yolo11n.pt
+b) runs/segment/yolov8_lane_segmentation
+
+
+Sonrakı mərhələdə   `yolov8_lane_segmentation`   qovluğundakı     `results.png`    şəklini    cv2.imread()    metodu ilə 
+çap edəcəyik ekrana. 
