@@ -1,0 +1,11 @@
+1) py -3.9 -m venv myenv   
+
+2) myenv\Scripts\Activate
+
+3) pip install labelImg 
+
+4) pip install --upgrade setuptools
+
+5) pip install pyqt5 lxml opencv-python
+
+6) labelImg

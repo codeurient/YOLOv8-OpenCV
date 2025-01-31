@@ -1,0 +1,2 @@
+1) İndi Şəkil 1 -dəki kodları işə salırıq. Nəticədə isə qrafikləri görəsiyik. Bu qrafiklər modelin öyrədilməsinin nə qədər uğurli və,
+uğursuz keçdiyini ifadə edir. 
