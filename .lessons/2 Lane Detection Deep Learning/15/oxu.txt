@@ -1,0 +1,43 @@
+1) !yolo segment predict model="runs/segment/yolov8_lane_segmentation/weights/best.pt" source= "inference/test_images/0.jpg" --hide_labels=True --boxes=False
+
+
+Yuxarıdakı əmrə   ` --hide_labels=True --boxes=False `    sətrlərini əlavə edərək işə salsaq, segment edilən şəkildə, yol işarətlərinin kənarındakı rəqəmlər silinəcək.
+Şəkil 1
+
+
+
+
+
+
+2) inference/test_images  qovluğunda olan şəkillərdən əlavə olaraq, həmin şəkillərin `ground truth`  versiyalarınıda əldə etməliyik. Şəkil 2
+Yəni, qara rəngdə olan versiyalarını. Yol işarətləri daha rahat seçilsin deyə. 
+
+NOT: Ayrıca bir kod yazaraq, həmin şəkillərin arxa fon rəngini qaralda bilərsiz.  Bunu bir dəfə etmişdik əvvəlki dərslərdə.
+
+
+
+
+
+3) Şəkillərin həm normal həmdə qara fon versiyaları əlimizdə olduğu üçün artıq bu `Qara` fon olan şəkildəki yol zolaqlarını
+xüsusi bir python kodu ilə aşkarlıya bilərik. Qara fondakı yol zolaqlarını aşkarladıqda həmin zolaqarın üzərində ağ rəngdə əlavə
+təbəqə kimi bir işarətlər olacaq (maska olacaq). Bu işarətlər vasitəsi ilə də, normal şəkildəki yol zolaqlarını aşkarlayacağıq. 
+
+NOT: Şəkilləri ağ qara etmək üçün python kodu yazmaq yaxud manul olaraq hər hansısa proqram istifadə edə bilərsiniz. 
+
+Bu dediklərimi etmək üçün `Şəkil 3` -dəki kimi bir python kodunu implementasiya etmək lazımdır. Yəni yazmaq lazımdır. 
+Həmin Kodu yazırıq və proqramı işə salırıq. 
+
+
+NOT: Şəkillərinin ölçülərinin üst-üstə düşməməsi lazımdır.  Yəni, `model_path` -in ölçüsü 640px -dir. Bunun üçün `img_path` -ində 
+ölçüsünü resize etmək lazımdır. Onun üçün belə bir kod yazmışıq: img = cv2.resize(img, (640,640))  
+
+
+
+Şəkil 3 -dəki kodu işə saldıqdan sonra nəticədə 3 dənə fərqli şəkil görəsiyik:
+    - 1ci, sadə şəkildir
+    - 2ci, ağ qara şəklin segmentasiya edilmiş formasıdır (ilk öncə bu şəkildəki yol işarətləti segmentasiya edildikdən sonra maskalanıbdır)
+    - 3cü, normal şəklin segmentasiya edilmiş formasıdır (sonra ağ-qara şəkildəki işarətlər (maskalar) köçürülür normal şəkilə) - Şəkil 4
+
+
+
+
