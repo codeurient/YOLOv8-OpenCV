@@ -1,0 +1,24 @@
+!yolo segment predict model="runs/segment/yolov8_lane_segmentation/weights/best.pt" source="inference/test.mp4" --hide_labels=True --boxes=False
+
+
+1) Yuxarıdakı kod YOLOv8 modelindən istifadə edərək bir video faylında yol zolaqlarını (lane segmentation) aşkar edir və vizuallaşdırır.
+
+Əsas funksionallıq:
+    - YOLOv8 modelini yükləyir (best.pt çəki faylı ilə).
+    - Giriş mənbəyi olaraq video faylını (test.mp4) istifadə edir.
+    - Aşkarlanmış obyektlərin üzərində etiketləri gizlədir (--hide_labels=True).
+    - Qutuları (bounding boxes) deaktiv edir (--boxes=False), yalnız segmentasiyanı göstərir.
+
+
+
+Bu zaman `runs\segment\predict6`  adında bir qovluq yaranacaq və video bu qovluğa yüklənəcək.
+
+
+
+
+
+
+2) Həmin videonu google-dan endirmək üçün isə aşağıdakı kimi bir kod yaza bilərik   -   Şəkil 1
+
+from google.colab import files
+files.download("runs/segment/predict8/test.avi")

@@ -1,7 +1,0 @@
-İndi üç dənə sütun və bir sətrdən ibarət fiqur yaradırıq ki, şəkillər yan-yana olsun. Bunun üçündə Matplotlib kitabxanasından istifadə edə bilərik.  
-
-Kodumuzda belə bir hissə var: plt.subplot(131) 
-Buradakı subplot() metodunda yazılan 1 - birinci sətr deməkdir.
-                                     3 - üç sütun var deməkdir.
-                                     1 - hansı sırada dayansın mənasına gəlir. Yəni, 1ci sütundamı, 2ci sütundamı yoxsa 3cü sütundamı.
-
