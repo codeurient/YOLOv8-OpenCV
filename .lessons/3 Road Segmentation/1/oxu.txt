@@ -1,0 +1,17 @@
+################################
+#
+# Bu aşağıdakı Terminlər eyni mənaya gəlir. İnternetdə axtarış etdikdə bu terminlərdən istifadə edərək ətraflı məlumat əldə edə bilərsiniz. 
+#
+# 1. Road Segmentation 
+# 2. Road Surface Segmentation 
+# 3. Driveable Area Segmentation
+#
+###############################
+
+
+
+
+
+1) İlk öncə `Self Driving Car Project` adında qovluq yaradırıq. Şəkil 1
+2) Sonra bu qovluq içində `data` və `inference` adında qovluqlar yaradırıq (içi boşdu hələki). Şəkil 2
+3) Sonra isə Colab Network -unu açırıq. Şəkil 3  (Faylın adınıda `Road Segmentation.ipynb` qoyuruq) Şəkil 4

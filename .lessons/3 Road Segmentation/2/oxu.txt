@@ -1,0 +1,8 @@
+1) Əvvəlki `Lane Detection` dərsində olduğu kimi bu `Road Segmentation` dərsimizdə də, Google Drive -a qoşulmalıyıq. 
+
+İlk öncə bir başlıq mətni əlavə edirik - Şəkil 1
+Sonra isə kodlarımızı yazırıq. 
+
+
+
+2) `people.jpg` adlı şəkli `inference` adlı qovluqa yerləşdiririk.      Şəkil 2

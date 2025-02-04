@@ -1,0 +1,7 @@
+`Self Drivin Car Project` qovlugunun içində yanlışlıqla təkrar `Self Drivin Car Project` adında qovluq yaratmışam
+
+
+Ancaq qovluğun adı olmalı idi   `Road Segmentation`.
+
+
+3 nömrəli qovluqda bu xətanı gördüm və aradan qaldırdım. Siz isə ən başdan doğru yazın. 

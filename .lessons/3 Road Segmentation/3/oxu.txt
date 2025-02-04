@@ -1,0 +1,49 @@
+1) !yolo segment predict model=yolov8l-seg.pt source="inference/people.jpg"
+
+
+
+
+Yuxarıdakı kod YOLOv8 modeli ilə obyektlərin seqmentasiyasını (segmentasiya = obyektin dəqiq sərhədlərinin çıxarılması) icra edir.
+
+    - yolo segment predict → YOLOv8 modelini seqmentasiya üçün istifadə edir.
+    - model=yolov8l-seg.pt → YOLOv8-Large Segmentasiya modelini yükləyir.
+    - source="inference/people.jpg" → Giriş şəkli olaraq people.jpg faylını istifadə edir.
+
+Nəticə: Şəkildəki obyektləri (insanları və digər obyektləri) aşkarlayır və onların dəqiq konturlarını çıxarır.
+
+
+
+
+
+Bu model YOLOv8 Large (böyük ölçülü) segmentasiya modelidir və əsasən obyektlərin konturlarını dəqiq çıxarmaq üçün istifadə olunur.
+    - Sırf seqmentasiya üçün öyrədilmişdir (bounding box yox, maskalar yaradır).
+    - "L" versiyası daha dəqiqdir, çünki daha böyük və mürəkkəb neyron şəbəkəyə malikdir.
+
+
+
+
+
+Tətbiq sahələri:
+    - İnsan aşkarlanması və fonun silinməsi
+    - Avtomatik sürmə və yol zolaqlarının aşkarlanması
+    - Tibbi görüntülər üzərində analiz
+    - İstehsalatda keyfiyyətə nəzarət (məsələn, qüsurlu obyektlərin aşkarlanması)
+
+
+
+
+Əgər siz ən sürətli yox, ən dəqiq nəticəni almaq istəyirsənsə, yolov8l-seg.pt yaxşı seçimdir.
+Amma daha sürətli model lazımdırsa, yolov8s-seg.pt və ya yolov8n-seg.pt kimi modellər istifadə oluna bilər.
+
+
+
+
+
+Yuxarıdakı əmri işə salırıq. Bu zaman `runs/segment/predict` adında qovluq və `yolov8l-seg.pt` adında fayl yaranacaq və 
+segmentasiya edilmiş şəkil bu qovluq içinə yerləşəcək. Həmin əmri təkrar işə salsaq onda `predict2` adında 
+qovluq yaranacaq. Şəkil 2
+
+
+
+
+2) Segmentasiya edilmiş şəkli görmək üçün `Şəkil 2`-də, sarı rəng ilə işarətlənmiş əmri işə salmaq olar. 
