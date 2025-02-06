@@ -46,4 +46,4 @@ qovluq yaranacaq. Şəkil 2
 
 
 
-2) Segmentasiya edilmiş şəkli görmək üçün `Şəkil 2`-də, sarı rəng ilə işarətlənmiş əmri işə salmaq olar. 
+2) Segmentasiya edilmiş şəkli görmək üçün `Şəkil 2`-dəki, sarı rəng ilə işarətlənmiş əmri işə salmaq olar. 
