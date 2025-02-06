@@ -1,0 +1,42 @@
+NOT: 1ci Şəkil 1 - ə bax sonra Şəkil 2
+
+
+
+
+1) Indi   `data.yaml`    adlı faylı açırıq və lazımsız hissələri pozuruq (aşağıdakı hissə): 
+
+
+roboflow:
+  workspace: road-segmentation
+  project: road_segmentationv1.1
+  version: 3
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/road-segmentation/road_segmentationv1.1/dataset/3
+
+
+
+
+
+2) Sonra 2 nöqtəni bir nöqtə ilə əvəz edirik. 
+
+
+train: ./train/images
+val: ./valid/images
+test: ./test/images
+
+
+
+
+3) Sonrada növbəti sətri əlavə edirək faylı bağlayırıq (save etməyi unutmayın): 
+
+path: /content/gdrive/MyDrive/YOLOv8 Projects/Self Driving Car Project/Road Segmentation/data
+
+
+
+
+
+
+
+
+Şəkil 1 -dəki kimi idi sonra Şəkil 2 -dəki kimi oldu. 
+
