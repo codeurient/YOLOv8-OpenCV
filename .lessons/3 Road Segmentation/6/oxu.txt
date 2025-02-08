@@ -1,0 +1,23 @@
+1) Şəkil 1-dəki kodu işə saldıqda   `yolov8_road_segmentation`   qovluğundakı   `results.png`    şəkli görüntülənəcək.
+Bu qrafiki başa düşmək o qədərdə vacib deyildir. Bu qrafik modelin nə qədər yaxşı və pis öyrədilmiş olduğunu təsvir edir.
+
+
+
+
+
+
+2) !yolo segment predict model="runs/segment/yolov8_road_segmentation/weights/best.pt" source= "data/test/images/00424_png.rf.0e15a86433e1b0e25d4344d1fab325ca.jpg"
+
+
+Bu kod YOLOv8 modelindən istifadə edərək verilmiş təsvir (şəkil) üzərində seqmentasiya (segmentation) aparmaq üçündür.
+
+Qısa izah:
+    - !yolo segment predict → YOLOv8-in segmentasiya rejimində proqnoz vermək üçün əmri.
+    - model="runs/segment/yolov8_road_segmentation/weights/best.pt" → İstifadə edilən model faylı, yəni əvvəlcədən öyrədilmiş YOLOv8 seqmentasiya modeli.
+    - source="data/test/images/00424_png.rf.0e15a86433e1b0e25d4344d1fab325ca.jpg" → Proqnoz ediləcək giriş təsviri (şəkil).
+
+Kodun icrası nəticəsində verilmiş şəkildə obyektlərin seqmentasiyası aparılacaq və nəticə vizual olaraq göstəriləcək. Şəkil 2 -nin 1ci hissəsi. 
+
+
+
+3) Üzərində segmentasiya aparılan şəkli təsvir etmək üçün isə, Şəkil 2 -nin ikinci hissəsindəki kodu işə sala bilərik. 

@@ -1,0 +1,14 @@
+1) İnternetdən də, şəkil endirərək həmin şəkil üzərində segmentasiya əməliyyatı icra edə bilərik.  Şəkil 1
+
+
+
+
+
+NOT: Bu şəkli internetdən endirdiyimiz üçün elə ola bilər ki, bir müddət sonra həmin şəkil internetdən silinsin.
+Belə olduqda isə əmri saldıqda, xəta mesajı görəsiyik. Xəta mesajına fikir vermədən dəvam edirik. Çünki mən artıq 
+həmin şəkil endirmişəm. 
+
+
+
+
+2) İnternetdən endirilən daha bir fərqli şəkil üçündə seqmentasiya əməliyyatını icra edirik. Şəkil 2
