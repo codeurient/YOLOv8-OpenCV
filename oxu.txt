@@ -1,8 +1,82 @@
-1) 9-cu qovluqdakı Şəkillərdə gördüyümüz kodlar, YOLOv8 modelindən istifadə edərək bir görüntüdə yol seqmentasiyası aparmaq üçün istifadə edilir. 
-Model: 
-    a) yolda olan sahələri müəyyənləşdirir
-    b) maska yaradır 
-    c) və bu maskanı orijinal görüntü ilə birləşdirərək nəticəni vizuallaşdırır.
+1) Google Disk -də   `Traffic Sign Detection`    adında qovluq yaradırıq.   Şəkil 1
 
 
 
+2) `Traffic Sign Detection`    qovluğunun içində,    `data`  və  `inference`   adında qovluqlar yaradırıq.    Şəkil 2
+
+
+
+3) Şəkil 3 və 4 -də gördüyümüz kimi,    `inference`    qovluğuna    `people.jpg`    şəklini əlavə edirik.  `Traffic Sign Detection.ipynb` adında faylımızı
+yaradırıq. Birdə,   `yolov8l.pt`    adında faylımızı, əlavə edirik. 
+
+
+
+4) Sonra,  `Traffic Sign Detection.ipynb`   faylındakı   1,2,3,4   sətrlərindəki, qoşulma yaratmaq üçün istifadə edilən standart kodlarımızı işə salırıq.
+
+
+
+5) Sətr 5 dəki kod ilə, YOLOv8 modelindən istifadə edərək     `people.jpg`    adlı görüntüdə obyekt aşkarlanmasını həyata keçiririk:
+
+!yolo detect predict model=yolov8l.pt source="inference/people.jpg"
+
+
+
+6) Sonra şəkli görüntüləyə bilərik: Şəkil 5
+
+
+
+7) Şəkil 6 -da isə, YOLOv8 modelindən istifadə edərək "people.jpg" görüntüsündəki obyektləri aşkarlamaq və onların ətrafına çərçivə çəkmək üçün istifadə edilir. 
+Hər aşkarlanan obyektin adı və etibarlılıq faizi də görüntüyə əlavə olunur:
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cv2                                     – OpenCV kitabxanasıdır, görüntü işlənməsi üçün istifadə olunur.
+imutils                                 – OpenCV ilə görüntü ölçüsünü dəyişmək üçün istifadə edilir.
+ultralytics                             – YOLO modelini işə salmaq üçün lazım olan kitabxanadır.
+google.colab.patches import cv2_imshow  – Colab mühitində OpenCV ilə görüntü göstərmək üçün istifadə edilir.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+FONT_HERSHEY_SIMPLEX                    – Görüntü üzərində mətn yazmaq üçün standart şrift seçilir.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+img_path                                – Aşkar ediləcək görüntünün yolunu göstərir.
+model_path                              – YOLOv8 modelinin öncədən öyrədilmiş faylını (yolov8l.pt) göstərir.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cv2.imread(img_path)                    – Şəkli yükləyir.
+imutils.resize(img, width=640)          – Şəkilin enini 640 pikselə qədər kiçildir (ölçüsünü saxlayaraq).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+model = YOLO(model_path)                - YOLO modelini (yolov8l.pt) yükləyir və istifadəyə hazır vəziyyətə gətirir.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+results = model(img)[0]                 - Şəkli YOLO modelinə ötürür və aşkarlanan obyektlərin nəticələrini results dəyişəninə yazır. [0] – Yalnız ilk nəticəni götürür.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+for result in results.boxes.data.tolist():
+  x1, y1, x2, y2, score, class_id = result
+  x1, y1, x2, y2, class_id = int(x1), int(y1), int(x2), int(y2), int(class_id)  -  Aşkar Edilmiş Obyektlər Üzərində Dövr (Loop)
+
+results.boxes.data.tolist()             – Aşkar edilmiş obyektlərin koordinatlarını, etibarlılıq səviyyəsini (score) və sinif (class_id) məlumatlarını alır.
+x1, y1, x2, y2                          – Obyektin ətrafındakı çərçivənin koordinatlarıdır.
+score                                   – Modelin həmin obyektə olan etibarlılıq dərəcəsidir (0 ilə 1 arasında).
+class_id                                – Obyektin sinif ID-sidir (məsələn, insan, avtomobil və s.).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+if score > 0.5:
+    cv2.rectangle(img, (x1, y1), (x2, y2), (0,255,0), 2)                        - Filtrləmə və Çərçivə Çəkmə
+
+score > 0.5                                             – Etibarlılığı 50%-dən yüksək olan obyektləri nəzərə alır.
+cv2.rectangle(img, (x1, y1), (x2, y2), (0,255,0), 2)    – Obyektin ətrafına yaşıl ((0,255,0)) çərçivə çəkir, qalınlığı 2 piksel olur.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+score = score * 100
+    class_name = results.names[class_id]
+    text = f"{class_name}: %{score:.2f}"
+    cv2.putText(img, text, (x1, y1-10), font, 0.5, (0,255,0), 1)                -  Etibarlılıq və Sinif Adlarının Ekrana Yazılması
+
+score = score * 100                     – Etibarlılıq dərəcəsini faiz (%) şəklində göstərmək üçün 100-ə vurur.
+results.names[class_id]                 – Həmin obyektin adını alır (məsələn, person, car).
+cv2.putText(...)                        – Obyektin üzərinə sinif adını və etibarlılıq faizini (text) yazır.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+cv2_imshow(img)                         – Google Colab mühitində şəkli göstərir. Əgər kodu kompüterdə işlətsəniz, cv2.imshow("Prediction", img) istifadə edə bilərsiniz.
