@@ -1,15 +1,75 @@
 1) !yolo detect predict model="runs/detect/yolov8_traffic_sign/weights/best.pt" source= "https://www.puertoricocartransport.com/news/wp-content/uploads/2021/08/u-turn-puerto-rico.jpg"
 
 
-İnternetdən link vasitəsi ilə şəkil endiririk və onu segmentasiya etməyə çalışırıq. Ancaq bizim öyrətdiyimiz modeldə bu formaya malik 
+İnternetdən link vasitəsi ilə şəkil endiririk və onu segmentasiya etməyə çalışırıq. Ancaq bizim öyrətdiyimiz modeldə bu formaya malik (yumru dairə içində U dönüşü işarəli) 
 şəkil olmadığı üçün yəni modeli bu forma ilə öyrətmədiyimiz üçün   `(no detections)`   yəni heçnə tapılmadı mesajı ilə qarşılaşacağıq.      Şəkil 1
 
 
 
 
 
-
-
-
-
 2) Colab üzərində print edərək yaxud google diskdən şəklə baxa bilərik.     Şəkil 2
+
+
+
+
+
+
+
+
+
+
+
+3) !yolo detect predict model="runs/detect/yolov8_traffic_sign/weights/best.pt" source= "https://www.shutterstock.com/shutterstock/photos/284713436/display_1500/stock-photo-traffic-triangle-shaped-right-u-turn-sign-with-post-on-white-background-284713436.jpg"
+
+Təkrar bir şəkil endirək və onun üzərində test edək.   Şəkil 3     
+
+Bu şəklin üzərində da, fərqli yazılar olduğu üçün segmentasiya əməliyyatı uğursuz alındı. Deməli, modelimizi
+öyrədən zaman həmin şəkilə bənzəyən şəkillərdən də istifadə etməmişik. 
+
+
+NOT: Əgər kod 2 dəfə təkrar klikləsək onda predict4, predict5 və.s kimi qovluqlar yaranacaq ancaq içində eyni şəkil olacaq.  Şəkil 4
+
+
+
+
+
+
+
+
+4) Bir modeli yaxşı, keyfiyyətli öyrətmək üçün gərək eyni şəklin fərqli variantlarına  `data augmentation`   tətbiq edək. 
+
+
+
+Data Augmentation — mövcud verilənləri süni şəkildə genişləndirmək üçün müxtəlif texnikalar tətbiq edərək yeni nümunələr yaratmaq prosesidir.
+
+💡 Məqsəd: Modelin daha yaxşı öyrənməsi və overfitting-in (həddindən artıq uyğunlaşma) qarşısını almaq.
+
+Overfitting: modelin təlim üçün verilən datalara çox yaxşı uyğunlaşması, lakin yeni, görmədiyi datalar üzərində zəif nəticə göstərməsi deməkdir.
+Təsəvvür et ki, bir tələbə imtahan suallarını əzbərləyib, amma anlayışları tam başa düşməyib. İmtahanda eynən həmin suallar gələndə yaxşı nəticə 
+göstərir, amma yeni suallara cavab verə bilmir.
+
+🔹 Eyni vəziyyət süni intellekt modellərində də olur:
+    - Təlimdə yüksək dəqiqlik əldə edir ✅
+    - Testdə zəif nəticə göstərir ❌
+    
+    
+🔹 Əsas texnikalar:
+    Döndərmə (Rotation)         – Şəkli müəyyən dərəcə fırlatmaq.
+    Güzgü əksi (Flip)           – Şəkli yatay və ya şaquli çevirmək.
+    Ölçü dəyişdirmə (Scaling)   – Şəkili böyütmək və ya kiçiltmək.
+    Şəffaflıq və parlaqlıq      – İşıqlandırma effektləri.
+    Şəkil kəsilməsi (Cropping)  – Şəklin bir hissəsini istifadə etmək.
+    Süni səs-küy (Noise)        – Şəkilə təsadüfi səs-küy əlavə etmək.
+
+📌 İstifadə sahələri: Kompüter görmə (Computer Vision), NLP, səs tanıma və s.
+
+
+
+
+Overfitting-in qarşısını almaq üçün nə etmək olar?
+✅ Daha çox data toplamaq
+✅ Data Augmentation tətbiq etmək
+✅ Regularization (L1, L2) metodlarından istifadə etmək
+✅ Modelin ölçüsünü azaltmaq (məsələn, çox dərin neyron şəbəkə yerinə daha sadə arxitekturadan istifadə etmək)
+✅ Dropout və ya Batch Normalization kimi texnikaları tətbiq etmək
