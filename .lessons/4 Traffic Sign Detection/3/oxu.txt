@@ -1,0 +1,15 @@
+1) `stop_sign.jpg`   adlı şəkli    `inference`   qovluğuna yerləşdiririk.  Şəkil 1
+
+
+Sonra aşağıdakı əmr ilə özümüzün öyrətmiş olduğu modeldən istifadə edərək şəkil üzərində yerləşən yol işarətini seçirik.    Şəkil 2
+
+
+!yolo detect predict model="runs/detect/yolov8_traffic_sign/weights/best.pt" source= "inference/stop_sign.jpg"
+
+ 
+
+
+
+
+
+2) Sonra isə, işarətlənib işarətlənmədiyini görmək üçün ekrana həmin şəkli çap edirik. Yaxud girib google disk -dəndə baxa bilərik. Şəkil 3
