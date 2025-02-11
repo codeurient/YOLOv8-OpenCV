@@ -1,0 +1,4 @@
+Ən son olaraq   test.jpg    şəklini 
+
+    1ci yolo modelinin faylı ilə, 
+    2ci olaraq özümüzün öyrətdiyi model ilə test edirik ancaq nəticə əldə etməyəcəyik. Çünki belə bir şey öyrətməmişik modelə. 
