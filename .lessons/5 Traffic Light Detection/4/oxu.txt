@@ -1,0 +1,22 @@
+1) Növbəti addım olaraq ZİP faylı UNZİP edirik:   Şəkil 1 - 1
+
+
+
+
+2) Sonra modeli öyrədirik:  Şəkil 1 - 1,   Şəkil 1 - 2
+
+
+
+3) Əgər model öyrədən zaman yarıda kəsilərsə, onda qaldığı yerdən dəvam etməsi üçün     `Şəkil 2` -də    olduğu kimi bir əmr yazırıq. 
+
+
+
+
+4) Modeli öyrətdikdən sonra qrafikləri görmək üçün Şəkil 3 -dəki əmri işə salırıq. 
+
+
+
+
+
+NOT: Modeli öyrətdiyimiz  zaman   `data.yaml`   faylında, ['green', 'red', 'yellow']   yazaraq, segmentasiya əməliyyatının, bu rənglər ilə 
+aparılması gərəkdiyini vurğulamışıq. Bunu ən əsas işıqforlarda olan rəngləri işarələmək üçün istifadə edəcəyik. 

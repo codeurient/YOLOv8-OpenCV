@@ -1,7 +1,0 @@
-1) Google disk -də,   `Traffic Light Detection` adında qovluq yaradırıq.    Şəkil 1-1, 1-2
-
-
-2) `Traffic Light Detection`   qovluğunun içində isə:                                                             
-                                                    a) `data`  adında boş qovluq yaradırıq                                                              Şəkil 2
-                                                    b) `inference` adında qovluq yaradırıq və həmin qovluğa   `test.jpg`  şəklini əlavə edirik.         Şəkil 3
-                                                    c) `Traffic Light Detection.ipynb`   adında fayl yaradırıq.                                         Şəkil 2

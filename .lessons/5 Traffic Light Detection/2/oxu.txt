@@ -1,0 +1,44 @@
+1) Ən birinci istifadə etdiyimiz kodlar standart qoşulma və kitabxana yükləmə kodlarımızdı.  Şəkil 1
+
+
+
+
+
+
+
+2) Sonra internetdən şəkil endiririk və onun segmentasiyasını test edirik. Şəkildə nələr işarətlənəcək onlara fikir verək.   
+Məsələn, avtobus, maşın, adam və.s              Şəkil 2  
+
+Həmin kod işə düşdükdə:          1ci olaraq   `yolov8l.pt`    faylı yaradılır,                2ci olaraq  şəkil endirilir,               3cü olaraq run qovluğu yaradılır.   
+
+
+
+
+
+
+3) Növbəti əmr python implimentasiyasi olacaqdır. Bu əmri işə saldıqda şəkildə olan bəzi obyektlər işarətlənməyəcək. Şəkil 3 - 1,   Şəkil 3- 2
+
+
+
+
+
+Şəkil 2    və   Şəkil 3 - 1    də olan iki kod arasında əsas fərq deteksiya prosesi və məlumatın haradan gəldiyi ilə bağlıdır. Gəlin fərqləri təhlil edək:
+
+Birinci kod:   !yolo detect predict model=yolov8l.pt source="..."
+✅ Xüsusiyyətləri:
+    - Burada Ultralytics YOLO CLI (komanda sətri) istifadə olunur.
+    - Model avtomatik olaraq tam təsvir üzərində işləyir.
+    - YOLO CLI ehtimal ki, bütün obyektləri deteksiya edir və son nəticəni fayla yazır.
+    - Siz sadəcə deteksiya olunmuş şəkili yükləyirsiniz və onu cv2.imread() ilə oxuyursunuz.
+🟢 Nəticə:
+    - Bütün obyektlər aşkar edilir: avtobus, maşın, işıqfor, insanlar (şofer daxil olmaqla).
+
+
+
+
+İkinci kod: results = model(img)[0]
+✅ Xüsusiyyətləri:
+    - Burada Python API (ultralytics.YOLO) istifadə olunur.
+    - Modeli birbaşa Python kodu daxilində çağırırsınız.
+    - Şəkil əvvəlcədən cv2.imread() ilə oxunur və deteksiyaya göndərilir.
+    - Nəticələr əl ilə filtr edilir (if score > 0.5 və class_id ilə).
