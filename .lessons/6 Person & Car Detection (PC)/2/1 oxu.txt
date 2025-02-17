@@ -1,0 +1,8 @@
+1) Bizim yazacağımız alqoritma,   `coco_classes.txt`   faylının içindən obyekt siniflərini əldə etməklə yanaşı fərqli xüsusiyyətlərədə sahib olacaq. 
+
+
+Alqoritmamız işlədikcə eyni vaxtda FPS dəyərlərinidə ölçmək istəyə bilərik. FPS-si ölçdükdən sonra, modelimiz videonu skan edəcək və bir qovluğun 
+yaddaşına yerləşdirəcək həmin videonu. Sonra da, modelin aşkar etdiyi obyektlərə nəzər yetirəcəyik. 
+
+
+İlk öncə `detect.py` adında fayl yaradırıq. 

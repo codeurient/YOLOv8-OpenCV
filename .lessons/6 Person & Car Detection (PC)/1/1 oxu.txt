@@ -1,0 +1,46 @@
+Bu dərs, insan aşkarlama modeli üzrəində işləyəsiyik. 
+
+1) Bunun üçün Google Disk-də   `Person & Car Detection (PC)`   adında qovluq yaradırıq.     Şəkil 1
+
+2) Sonra həmin qolvuq içində     `inference`    və    `models`    adında 2 dənə boş qovluq yaradırıq.   Şəkil 2
+
+3) Daha sonra isə   `coco_classes.txt`    adlı faylı    `Person & Car Detection (PC)`    qovluğuna yerləşdiririk. Həmin fayl içində aşağıdakı kimi
+məlimatlar vardır:    Şəkil 3
+
+Source: https://github.com/pjreddie/darknet/blob/master/data/coco.names
+
+--------------------------------------
+
+person -- *
+bicycle -- *
+car -- *
+motorbike -- *
+aeroplane
+bus -- *
+train -- *
+truck -- *
+boat
+traffic light və.s
+
+
+
+
+
+
+NƏDİR bu TXT faylı və nə üçün lazımdır bizə ?  
+
+coco_classes.txt faylının içində COCO dataset-də olan obyektlərin adları var. Bu fayl obyekt aşkarlama (object detection) modellərində obyektlərin hansı 
+ID-yə uyğun gəldiyini göstərmək üçün istifadə olunur. Bu tip fayllar YOLO, Faster R-CNN, SSD və s. kimi obyekt aşkarlama modelləri üçün istifadə edilir.
+
+Model bir şəkil üzərində işlədikdə, aşkarladığı obyektlərə aid nömrələri qaytarır.
+
+Məsələn, 0 - person,    2 - car və s
+
+Bu coco_classes.txt faylı həmin nömrələrin hansı obyektə uyğun olduğunu göstərir.
+
+Biz bu fayldan istifadə edərək şəkil üzərində olan obyektləri aşkarlayacağıq. Hansı obyektləri aşkarlamaq istəyiriksə həmin obyektin adı qarşısında yuxarıda olduğu 
+kimi --* simvolları yerləşdiririk. 
+
+
+Hələki,  `test.py`  adında bir fayl yaradaq və   `coco_classes.txt`   faylından stringlərin çıxarılmasına aid sadə bir nümunə yazaq. 
+Daha sonra isə tam real bir proyekt üzərində bu faylı necə istifadə edə biləcəyimizidə görəsiyik. 
