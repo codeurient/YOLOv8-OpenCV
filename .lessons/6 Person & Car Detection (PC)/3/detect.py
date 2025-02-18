@@ -11,18 +11,19 @@ text_color_w = (255,255,255)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
-class_ids = [0, 1, 2, 3, 5, 6, 7]
+class_ids = [0, 1, 2, 3, 5, 6, 7, 8]
 
 total_fps = 0
 average_fps = 0
-num_of_frames = 0
+num_of_frame = 0
 
 
 # Bu kod hissəsi YOLO modelini yükləyir, obyekt kateqoriyalarını (labels) alır və hər bir obyekt üçün təsadüfi rənglər təyin edir. Hissə-hissə izah edək:
 # 1️⃣ YOLO Modelinin Yüklənməsi:
 #                               YOLO("models/yolov8n.pt")   → yolov8n.pt adlı YOLOv8 Nano modelini yükləyir.
 #                               YOLOv8 Nano (yolov8n.pt)    → YOLO modelinin ən yüngül versiyasıdır, daha sürətli işləyir, amma daha az dəqiq nəticələr verə bilər.
-#                               Əgər `yolov8n.pt` modeli `models` qovluğunda mövcud deyilsə onda bu fayl həmin qovluq içinə endiriləcək. 
+#                               Əgər `yolov8n.pt` modeli `models` qovluğunda mövcud deyilsə yaxud `models` qovluğu mövcud deyilsə onda ilk öncə həmin qolvuq yaranacaq
+#                               və həmin fayl bu qovluq içinə endiriləcək. 
 model = YOLO("models/yolov8n.pt")
 
 

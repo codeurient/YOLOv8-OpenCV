@@ -32,7 +32,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 # 5 → bus (Avtobus)
 # 6 → train (Qatar)
 # 7 → truck (Yük maşını)
-class_ids = [0, 1, 2, 3, 5, 6, 7]
+class_ids = [0, 1, 2, 3, 5, 6, 7, 8]
 
 
 # total_fps     → Bütün kadrların FPS dəyərlərinin cəmini saxlayır.
@@ -40,4 +40,4 @@ total_fps = 0
 # average_fps   → FPS-in ortalama dəyəri hesablanacaq.
 average_fps = 0
 # num_of_frames → Neçə kadrın emal edildiyini izləmək üçün istifadə edilir.
-num_of_frames = 0
+num_of_frame = 0
