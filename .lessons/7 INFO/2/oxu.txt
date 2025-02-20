@@ -1,0 +1,201 @@
+1) https://jetbot.org/master/
+
+
+JetBot – NVIDIA Jetson Nano platforması üçün kiçik, ağıllı, AI əsaslı bir robotdur. Bu robot dərin öyrənmə, kompüter 
+görməsi və avtonom idarəetmə öyrənmək üçün idealdır. JetBot ROS (Robot Operating System) və PyTorch/TensorFlow ilə 
+işləyə bilir və NVIDIA-nın AI model dəstəklərindən istifadə edir.
+
+✅ Əsas xüsusiyyətləri:
+    - Jetson Nano əsaslı işləyir.
+    - Kamera və AI modelləri ilə real vaxt obyekt tanıma və izləmə edə bilir.
+    - WiFi ilə uzaqdan idarə olunur və web interfeysi var.
+    - ROS və Python ilə proqramlaşdırıla bilir.
+
+
+
+
+
+
+
+Jetson Nano Developer Kit və Raspberry Pi arasındakı əsas fərqlərdən biri GPU-nun (Qrafik Prosessorun) olması və AI (Süni İntellekt) üçün optimallaşdırılmasıdır.
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Xüsusiyyət	                     Jetson Nano Developer Kit	                            Raspberry Pi (Pi 4, Pi 5)
+------------------------------------------------------------------------------------------------------------------------------------------------
+GPU (Qrafik Prosessor)	         NVIDIA Maxwell GPU (128 CUDA nüvəsi)	                Broadcom VideoCore VI (Pi 4) və VideoCore VII (Pi 5)
+CUDA dəstəyi	                 ✅ (CUDA 10 və TensorRT)	                           ❌ (CUDA və TensorRT yoxdur)
+AI və dərin öyrənmə	             ✅ (TensorFlow, PyTorch, ROS dəstəyi)	               ⚠️ Məhdud dəstək (CPU əsaslı)
+Paralel hesablama	             ✅ (CUDA ilə sürətləndirilmiş)	                       ❌ (Sadə GPU, əsasən video işləmə üçün)
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+a) Jetson Nano Developer Kit – Güclü GPU və AI Üstünlükləri 🎮🚀
+🔹 NVIDIA Maxwell arxitekturasına əsaslanan 128 CUDA nüvəli GPU-su var.
+🔹 CUDA (Compute Unified Device Architecture) və TensorRT dəstəyi ilə AI modellərini sürətləndirmək üçün optimallaşdırılıb.
+🔹 TensorFlow, PyTorch və OpenCV GPU ilə sürətli işləyir.
+🔹 Obyekt tanıma, dərin öyrənmə və ROS əsaslı robot sistemlərində istifadə edilir.
+
+✅ İdeal istifadə sahələri:
+✔️ AI əsaslı robotlar (JetBot, autonomous car)
+✔️ Video analiz və obyekt tanıma (YOLO, OpenCV)
+✔️ Sənaye avtomatlaşdırması və ağıllı kameralar
+
+
+
+b) Raspberry Pi – GPU Daha Məhduddur 🎥🔍
+🔹 Broadcom VideoCore VI (Raspberry Pi 4) və VideoCore VII (Pi 5) istifadə edir.
+🔹 CUDA və TensorRT kimi sürətli AI texnologiyalarını dəstəkləmir.
+🔹 GPU əsasən video işləmə və oyunlar üçün optimallaşdırılıb.
+🔹 AI və ML modelləri yalnız CPU-da (yavaş sürətlə) işləyə bilir.
+
+✅ İdeal istifadə sahələri:
+✔️ Ağıllı ev sistemləri (Home Assistant, IoT)
+✔️ Linux əsaslı serverlər və yüngül AI tətbiqləri
+✔️ Təhsil və Raspberry Pi əsaslı robotlar
+
+
+
+
+
+
+Nəticə – Hansı Daha Yaxşıdır? 🏆
+        - AI və Machine Learning üçün: ✅ Jetson Nano Developer Kit
+        - Sadə robotlar və IoT üçün: ✅ Raspberry Pi
+        - CUDA və paralel hesablama üçün: ✅ Jetson Nano
+        - Əsasən ofis və media sistemləri üçün: ✅ Raspberry Pi
+
+🔹 Əgər YOLO, TensorFlow, OpenCV və dərin öyrənmə modelləri işlətmək istəyirsinizsə, Jetson Nano Developer Kit daha yaxşı seçimdir.
+🔹 Əgər sadə proqramlaşdırma, IoT və Raspberry Pi layihələri üçün bir şey lazımdırsa, Raspberry Pi kifayətdir.
+
+🚀 Jetson Nano güclü AI və GPU tələbi olan layihələr üçün əla seçimdir!
+
+
+
+
+
+
+
+
+Yalnız Raspberry Pi ilə maneələri aşan sürücüsüz avtomobil (autonomous car) yaratmaq mümkündür, amma bəzi məhdudiyyətlər olacaq. Jetson Nano 
+kimi güclü bir GPU-nun olmaması səbəbindən bəzi AI və dərin öyrənmə modelləri yavaş işləyə bilər.
+
+Amma narahat olma! 🚀 Optimallaşdırılmış metodlardan istifadə edərək, Raspberry Pi ilə də işlək bir model qura bilərsən.
+
+
+
+
+a) Raspberry Pi ilə Avtonom Avtomobil Qurmaq – Mümkündür! 🚗💡
+
+Baxmayaraq ki, Jetson Nano daha güclü GPU-ya sahibdir, Raspberry Pi ilə də maneələri aşan avtonom avtomobil yaratmaq mümkündür. Bunun üçün 
+aşağıdakı yanaşmalardan istifadə edə bilərsən:
+
+Metod 1: Raspberry Pi + Donanım Optimizasiyası
+    ✅ Raspberry Pi 4 / 5 + Kamera + Ultrasonik Sensorlar (HC-SR04) + Lidar (Opsional)
+    ✅ Öz modelini yüngülləşdirmək üçün TensorFlow Lite və ya OpenCV istifadə etmək
+    ✅ AI yükünü azaldaraq, əsasən klassik alqoritmlərlə işləmək (PID, A)*
+
+
+
+
+
+b) Alternativlər – Jetson Nano Olmadan AI Sürətləndirmək
+💡 Əgər Jetson Nano ala bilmirsənsə, aşağıdakı alternativlərdən birini sına:
+
+Alternativ 1: Google Coral USB Accelerator
+💰 Qiymət: Təqribən 60-80 USD
+🚀 Faydası: TensorFlow və AI modellərini 10-20 dəfə daha sürətli işlədə bilər.
+🔗 Alqoritm: YOLO / TensorFlow Lite istifadə edib real vaxtda obyekt tanıma və naviqasiya edə bilərsən.
+
+Alternativ 2: Edge TPU (Google Coral)
+💰 Qiymət: Təqribən 30-50 USD
+🚀 Faydası: AI və dərin öyrənmə modellərini sürətləndirir.
+
+
+
+
+
+
+c) Texnofest üçün Raspberry Pi ilə Avtonom Maşın – Real Mümkünlük?
+🔵 Jetson Nano olmadan da iştirak edə bilərsən!
+🔵 Əsas hədəfin optimallaşdırılmış alqoritmlərlə işləyən, yüngül bir model qurmaq olmalıdır.
+🔵 Sadə PID və sensor əsaslı naviqasiya ilə yarışlarda uğur qazana bilərsən.
+
+🚀 Məsləhət: Əgər büdcən məhduddursa, OpenCV və TensorFlow Lite ilə optimallaşdırılmış bir model yarat və klassik naviqasiya metodlarından istifadə et.
+
+
+
+
+
+
+
+
+
+
+
+d) Raspberry Pi ilə YOLOv8L modelindən istifadə edə bilərik, amma böyük məhdudiyyətlər olacaq.
+
+🚨 Problem: Raspberry Pi’nin Məhdud Gucu
+    - YOLOv8L (Large) modeli çox böyükdür və həm CPU, həm də RAM tələb edir.
+    - Raspberry Pi 4/5-in CPU-su və RAM-ı yetərli olmaya bilər, inference (tanıma) sürəti çox yavaş ola bilər (~1 FPS və ya daha az).
+    - CUDA və TensorRT olmadığı üçün GPU sürətləndirilməsi olmadan işləyəcək, bu da performansı aşağı salır.
+
+
+💡 Raspberry Pi üçün Alternativlər və Tövsiyələr
+Əgər Raspberry Pi istifadə edirsənsə, daha yüngül modellər və optimallaşdırmalar etməlisən:
+
+1️⃣ YOLOv8L yerinə daha yüngül model seç
+🚀 YOLOv8n (Nano) və ya YOLOv8s (Small) istifadə et!
+YOLOv8n (~3.2 MB) – Raspberry Pi üçün ən yaxşı seçimdir (5-10 FPS)
+YOLOv8s (~6 MB) – Yavaş, amma işləyə bilər (2-5 FPS)
+YOLOv8L (~49 MB) – Çox ağırdır, RPi-də istifadə etmək real deyil!
+
+2️⃣ TensorFlow Lite və ya ONNX optimizasiya et
+✅ YOLO modelini TensorFlow Lite və ya ONNX formatına çevirib sürətləndir
+✅ Bu, modelin ölçüsünü azaldıb CPU istifadəsini optimallaşdırır
+
+3️⃣ Edge TPU və ya Google Coral Accelerator əlavə et
+✅ Raspberry Pi’ni AI üçün sürətləndirmək üçün Google Coral TPU əlavə edə bilərsən
+✅ Bu, YOLO-nu 10-20 dəfə sürətləndirə bilər və real vaxt performansı əldə edə bilərsən
+
+
+
+Ən yaxşı seçim: YOLOv8n (Nano) + TensorFlow Lite optimizasiya 🚀
+✅ Raspberry Pi-də ən sürətli və stabil işləyəcək seçimdir.
+✅ FPS artırır, model yüngülləşir, daha az RAM və CPU istifadə edir.
+✅ TensorFlow Lite optimizasiyası ilə YOLOv8n təxminən 5-10 FPS sürətində işləyə bilər.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2) https://www.waveshare.com/wiki/JetBot_AI_Kit
+
+Waveshare JetBot AI Kit, Jetson Nano əsaslı JetBot robotunu yaratmaq üçün bir dəstdir. Bu dəst kamera, motorlar, şassi 
+və digər komponentləri ehtiva edir ki, JetBot-u sıfırdan yığmaq mümkün olsun.
+
+✅ Əsas xüsusiyyətləri:
+    - Jetson Nano Developer Kit ilə uyğun gəlir.
+    - AI əsaslı obyekt tanıma və dərin öyrənmə dəstəyi.
+    - İnteqrasiya olunmuş WiFi və uzaqdan idarəetmə interfeysi.
+    - ROS (Robot Operating System) və TensorFlow ilə işləyə bilir.

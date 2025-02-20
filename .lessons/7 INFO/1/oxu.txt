@@ -1,0 +1,122 @@
+1) YOLOv8 modelinin FPS-i TensorRT optimallaşdırması ilə xeyli artırıla bilər. TensorRT optimallaşdırması FPS-i 2x-5x artırır!
+
+🚀 Əgər TensorRT ilə FPS artırmaq istəyirsinizsə, NVIDIA GPU və CUDA/TensorRT quraşdırılmış olmalıdır! 🚀
+
+YOLOv8 TensorRT vs. Normal PyTorch:
+
+a) Normal PyTorch (FPS)
+YOLOv8n	~50-100 FPS	
+YOLOv8s	~30-80 FPS	
+YOLOv8m	~20-60 FPS	
+YOLOv8l	~10-40 FPS
+
+b) TensorRT Optimized (FPS)
+YOLOv8n	200-300 FPS
+YOLOv8s	150-250 FPS
+YOLOv8m	100-200 FPS
+YOLOv8l	80-150 FPS
+
+
+
+
+
+2) İki kameranın quraşdırılması.
+
+Bir nəqliyyat vasitəsi var deyək. Qayda odur ki, həmin maşın yol işarətini gördükdə dayanaraq sərnişini götürməlidir. Yaxud ümumiyyətlə dayanmalıdır. 
+Yəni sərnişin götürmək vacib deyil. STOP işarətini gördükdə də, maşınlar dayanmalıdırlar. Biz YOLOv8 ilə modeli öyrətdik deyək. Kodu elə yazmışıq ki, 
+maşınımız həmin yol işarətini gördükdə dayanmalıdır. 
+
+Bunun üçün ilk öncə maşında kamera olmalıdır. Ancaq həmin kamera bu yol işarətinə çatmağa 10 metr qalmış onu görür və avtomatik dayanır. Normalda isə,
+bu qədər uzaq məsafədə dayanmalı deyildir. Bu problemi həll etmək üçün maşında 2 ədəd sadə stereo kameranı yan-yana quraşdıra bilərik. 
+
+1ci kamera yol işarətlərini müəyyən edəcək.
+2ci kamera dərinliyi ölçəcək (intel realsense). 
+
+Yaxud bir ədəd xüsusi dərinlik ölçən kameralardan istifadə edə bilərik. Yolov8 ilə yol işarətini müəyyən etdikdən sonra həmin işarətin mərkəzini tapmaq
+lazımdır. Yol işarətinin mərkəzinidə məüyyən etdikdən sonra, bu xüsusi kamera ilə həmin yol işarətinin mərkəzindəki hər hansısa pikseli işarətliyərək, dərinliyi 
+ölçə bilərik.  
+
+Artıq deyə bilərik ki, maşın həmin yol işarətinə 2 metr qalana qədər hərəkət etsin. 
+
+Dərinliyi ölçərkən kamera, əşyaya nəqədər yaxın olarsa istilik bir o qədər çox və tünd olar. Uzaq olduğu zaman isə soyuq və açıq olar. Həmin kameralar bu cür 
+yaxınlaşıb yaxınlaşmadığını təyin edir. Google-da,  `intel realsense camera output`  yazaraq həmin görüntünün nəyə bənzədiyini görə bilərik. 
+
+
+
+
+
+
+3) LİDAR sensoru lazım gələ bilər. Ətrafdakı sağ və solda olan maneələri görməsi üçün. Bu sensor ətrafdakı əşyaların uzaqlığını ölmək üçün istifadə edilir. 
+
+
+
+
+
+4) Test mühidi üçün ROS Simulyator istifadə etmək olar. 
+
+    a) . ROS (Robot Operating System)  Simulation və Avtomobil Modelləşdirməsi nədir ?
+    ROS - robotların idarə edilməsi üçün açıq mənbə kodlu bir sistemdir. Robot simulyasiyası üçün Gazebo, Rviz və Carla kimi alətlərdən istifadə olunur.
+    Avtomobil simulyasiyaları üçün ROS, Gazebo, Carla və Autoware əsas platformalardır.
+
+
+    b). Avtomobil Modelləşdirməsi nədir?
+    Avtomobil modelləşdirməsi – avtonom nəqliyyat vasitələrinin (AVs) simulyasiya edilməsi üçün 3D model və sensor sistemlərinin qurulmasıdır.
+    Əsas komponentlər:
+        - 3D avtomobil modeli (URDF, SDF formatında)
+        - Fizika mühərriki (ODE, Bullet, DART, PhysX)
+        - Sensorlar (LiDAR, Kamera, IMU, GPS)
+        - Kontrol sistemləri (PID, MPC, Reinforcement Learning)
+        - Sürət və sükan idarəsi (Ackermann Steering, Differential Drive)
+
+
+    c). Avtomobil Simulyasiyası üçün Əsas Alətlər
+        - Alət	    Təsviri
+        - Gazebo    Fizika əsaslı simulyasiya mühərriki (ROS inteqrasiyası var)
+        - Rviz	    3D vizuallaşdırma aləti
+        - Carla	    Avtonom nəqliyyat vasitələri üçün simulyator (ROS uyğunluğu var)
+        - Autoware	Avtomatik idarəetmə proqramları üçün açıq mənbə kodlu sistem
+        - SUMO	    Şəhər nəqliyyatı simulyasiyası üçün alət
+
+
+
+
+
+5) Ackermann İdarəetməsi nədir? 🚗
+
+    a) Ackermann sükan idarəetməsi - avtomobillərin hərəkət trayektoriyasını optimallaşdıran xüsusi bir sükan mexanizmidir. Avtomobillərin ön təkərləri döndüyü zaman, 
+    hər iki təkər fərqli radiuslarda dönməlidir, çünki daxili və xarici təkərlərin trayektoriyası fərqlidir.
+
+
+    Adi avtomobillərdə ön təkərlər sükanla idarə olunur. Əgər hər iki ön təkər eyni bucaq altında dönsəydi, bu, şinlərin sürtünməsini artırardı və avtomobil 
+    qeyri-sabit olardı. Ackermann prinsipi, ön təkərlərin dönmə bucaqlarını optimal şəkildə ayarlayaraq avtomobilin hamar dönməsini təmin edir.
+
+    Məsələn:
+        Daxili təkər (inner wheel) - daha çox dönür.
+        Xarici təkər (outer wheel) - daha az dönür.
+
+    Bu dönmələrin hesablanması üçün xüsusi düsturlar mövcuddur. Şəkil 1
+        🔹 L - avtomobilin təkərlərarası məsafəsi (wheelbase)
+        🔹 W - avtomobilin təkərlər arasındakı eni (track width)
+        🔹 R - dönmə radiusu
+
+
+    b) 2. Ackermann Sükan Modeli
+    Ackermann sükan modeli diferensial idarəetmə (differential steering) ilə müqayisədə daha realdır və avtomobillərdə, yarış maşınlarında və avtonom nəqliyyat 
+    vasitələrində geniş istifadə olunur.
+
+    Əsas xüsusiyyətləri:
+        ✅ Dönmədə sabitlik artır
+        ✅ Təkər sürtünməsini azaldır
+        ✅ Sükan idarəetməsini optimallaşdırır
+
+
+    c) Ackermann Kinematik Modeli (ROS ilə)
+    OS və Python istifadə edərək Ackermann idarəetmə modeli yarada bilərik.
+
+
+    d) Ackermann vs. Diferensial İdarəetmə
+    Ackermann sükanı əsasən avtomobillər və avtonom nəqliyyat vasitələrində istifadə olunur. Diferensial idarəetmə isə robotlarda və forkliftlərdə daha geniş yayılıb.
+
+
+
+
