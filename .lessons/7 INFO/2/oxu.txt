@@ -199,3 +199,54 @@ və digər komponentləri ehtiva edir ki, JetBot-u sıfırdan yığmaq mümkün 
     - AI əsaslı obyekt tanıma və dərin öyrənmə dəstəyi.
     - İnteqrasiya olunmuş WiFi və uzaqdan idarəetmə interfeysi.
     - ROS (Robot Operating System) və TensorFlow ilə işləyə bilir.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🛠 Raspberry Pi-də dəstəklənən dillər:
+✅ Python (ən çox istifadə olunan, xüsusilə süni intellekt və robototexnika üçün)
+✅ C / C++ (aşağı səviyyəli performans üçün)
+✅ Java (server tətbiqləri və IoT layihələri üçün)
+✅ JavaScript (Node.js)
+✅ Go, Rust (performans və təhlükəsizlik üçün)
+✅ Shell Scripting (Bash) (Linux əmrlərini avtomatlaşdırmaq üçün)
+
+Raspberry Pi ARM prosessorlu Linux cihazdır, ona görə də Linux üçün mövcud olan demək olar ki, bütün dillərdən istifadə edə bilərsən.
+
+
+
+
+
+
+🚀 NVIDIA Jetson Nano-da dəstəklənən dillər:
+✅ Python (TensorFlow, PyTorch, YOLO və s.)
+✅ C / C++ (CUDA, OpenCV, AI optimizasiyası üçün)
+✅ Java, JavaScript (IoT və veb tətbiqləri üçün)
+✅ Rust, Go (sürət və təhlükəsizlik üçün)
+✅ Shell Scripting (Bash)
+
+Jetson Nano CUDA və GPU əsaslı işləyən sistemdir, ona görə də süni intellekt və görüntü işləmə üçün əsasən Python və C++ istifadə olunur.
+
+
+
+
+📌 Hansı daha güclüdür?
+Süni intellekt və dərin öyrənmə üçün → NVIDIA Jetson Nano
+Robototexnika və ümumi IoT layihələri üçün → Raspberry Pi
