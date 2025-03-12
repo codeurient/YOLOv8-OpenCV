@@ -250,3 +250,110 @@ Jetson Nano CUDA və GPU əsaslı işləyən sistemdir, ona görə də süni int
 📌 Hansı daha güclüdür?
 Süni intellekt və dərin öyrənmə üçün → NVIDIA Jetson Nano
 Robototexnika və ümumi IoT layihələri üçün → Raspberry Pi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+
+🚗 Jetson Nano ilə Süni İntellekt əsaslı Avtonom Maşın (Self-Driving Car) üçün Tələb Olunan Resurslar
+Jetson Nano süni intellekt, dərin öyrənmə və kompüter görməsi üçün optimallaşdırılmışdır, lakin hardware resursları məhduddur. 
+Buna görə aşağıda əsas parametrləri və tövsiyələri qeyd edirəm.
+
+
+
+1️⃣ Əsas Tələb Olunan Hardware Resursları
+🧠 RAM (Operativ Yaddaş)
+Minimum: 4GB LPDDR4 (Jetson Nano-nun daxili RAM-ı)
+Tövsiyə: 8GB və ya daha çox (Jetson Xavier NX kimi modellər üçün)
+Səbəb: Süni intellekt modelləri üçün RAM vacibdir, çünki dərin öyrənmə və görüntü işləmə çox yaddaş tələb edir. Jetson Nano 4GB ilə işləyə bilər, 
+lakin böyük model və real vaxtda AI işlətmək üçün daha çox RAM lazımdır.
+
+
+
+
+💾 ROM (Daxili Yaddaş / Storage)
+Minimum: 32GB microSD (Class 10 və ya UHS-1)
+Tövsiyə: 128GB SSD və ya NVMe SSD
+Səbəb: AI modelləri, TensorFlow, PyTorch, OpenCV kimi kitabxanalar böyükdür və çox yer tutur. SD kart yavaş olduğu üçün, daha sürətli 
+SSD və ya USB 3.0 yaddaş istifadə etmək məsləhətdir.
+
+
+
+
+🎮 GPU (Qrafik Kart)
+Jetson Nano-nun daxili GPU-su: 128 CUDA cores, Maxwell Architecture
+Tövsiyə: Daha güclü GPU-lu model üçün Jetson Xavier NX (384 CUDA cores, Volta Tensor Cores)
+Səbəb: Jetson Nano GPU əsaslı AI işlədə bilir, lakin böyük modellər üçün çox güclü deyil. Daha kompleks AI modelləri üçün Jetson Xavier NX və ya Jetson AGX Orin lazımdır.
+
+
+
+
+2️⃣ Digər Vacib Avadanlıqlar
+📷 Kamera
+Tövsiyə: Raspberry Pi Camera v2 (CSI interface) və ya USB kamera
+Alternativ: Intel RealSense D435i (Dərinlik və obyekt tanıma üçün)
+Səbəb: Avtonom maşın üçün kamera əsas sensorlardan biridir. Jetson Nano CSI və USB kameraları dəstəkləyir.
+
+
+
+
+🖥 Əlavə Sensorlar
+Sensor	İstifadə Məqsədi
+LIDAR (RP Lidar A1, A2 və ya YDLidar)	        - Ətrafdakı obyektlərin məsafəsini ölçmək
+Ultrasonik Sensor (HC-SR04)	                    - Qısa məsafədə maneələrin aşkarlanması
+IMU (MPU6050, BNO055)	                        - Avtomobilin hərəkət istiqamətini və sürətini ölçmək
+GPS Modul (Ublox NEO-6M, M8N)	                - Yolu izləmək və naviqasiya üçün 
+
+
+
+⚡ Güc Mənbəyi (Power Supply)
+Minimum: 5V, 4A (DC adapter və ya USB-C adapter)
+Tövsiyə: 5V, 6A və ya daha güclü (əgər əlavə sensorlar və motorlar istifadə olunursa)
+Səbəb: Jetson Nano süni intellekt və kamera işlədəndə çox enerji sərf edir, zəif adapter istifadə etsəniz sistem restart olacaq.
+
+
+
+
+3️⃣ Jetson Nano ilə Avtonom Maşın (Self-Driving Car) Qurmaq üçün Tələb Olunan Proqramlar
+🖥 Əməliyyat Sistemi
+Ubuntu 18.04 / 20.04 (JetPack 4.6 və ya 5.0)
+
+
+
+
+📦 Vacib AI və Robototexnika Kitabxanaları
+✅ TensorFlow / PyTorch – Modelin təlimi və istifadə olunması
+✅ OpenCV – Şəkil və video işləmə üçün
+✅ YOLOv8 (Ultralytics) – Obyekt tanıma və yol analizi üçün
+✅ ROS (Robot Operating System) – Avtonom sistemlərin idarəsi üçün
+✅ Jetson Inference – NVIDIA-nın AI optimizasiya kitabxanası
+
+
+
+
+4️⃣ Nəticə: Avtonom Maşın üçün Ən Minimum Sistem
+Komponent	                            Tövsiyə Olunan
+Jetson Modeli	                        - Jetson Nano 4GB (başlanğıc üçün), Jetson Xavier NX (peşəkar üçün)
+RAM	                                    - 4GB (minimum),      8GB+ (tövsiyə olunur)
+Yaddaş (ROM)	                        - 32GB microSD (minimum), 128GB SSD (tövsiyə olunur)
+GPU	                                    - Jetson Nano-nun daxili GPU-su (128 CUDA cores)
+Kamera	                                - Raspberry Pi Camera v2 və ya USB Kamera
+LIDAR / Sensorlar	                    - RP Lidar A1, IMU, GPS, Ultrasonik sensor
+Güc Mənbəyi	                            - 5V, 4A və ya 5V, 6A (təhlükəsiz işləməsi üçün)
+
+
+
+💡 Əgər sadə avtonom maşın hazırlayırsansa, Jetson Nano 4GB ilə başlaya bilərsən.
+Daha inkişaf etmiş AI və real vaxtda yüksək FPS əldə etmək üçün Jetson Xavier NX və ya Jetson Orin lazım olacaq. 🚗💡
