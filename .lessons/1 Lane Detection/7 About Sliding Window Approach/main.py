@@ -3,7 +3,7 @@
 
 
 
-# Aşağıdakı `Sliding Window Approach` nədir haqqında yazılmışdıq ancaq qarmaşıq olduğu üçün praktikada tətbiq edərək izah etmık məsləhədir. 
+# Aşağıdakı `Sliding Window Approach` nədir haqqında yazılmışdır ancaq qarmaşıq olduğu üçün praktikada tətbiq edərək izah etmək məsləhədir. 
 
 # Şəkil 1 -də üst şəkildə,  `Sliding Window Approach` texnikası istifadə edilmişdir. Şəkildə bir yol və həmin yolda isə yol zolağı var və bu yol zolağı pəncərə 
 # içinə alınmışdır. Yol hərəkət etdikcə həmin pəncərələrdə hərəkət edərək yol zolağını işarətləyir. 
@@ -24,6 +24,7 @@
 
 
 # Sliding Window Approach nədir?
+
 # Sliding Window Approach, bir görüntü və ya verilənlərdə lokal xüsusiyyətləri axtarmaq və ya analiz etmək üçün istifadə 
 # edilən məşhur bir texnikadır. Bu metod, müəyyən ölçülü pəncərəni (window) verilənlərin və ya görüntünün üzərində sistematik 
 # şəkildə "sürüşdürərək" işləyir.
@@ -45,7 +46,7 @@
 
 # Sliding Window Approach-un üstünlükləri:
 #     Sadə və intuitivdir:
-#         Bu metod kompüter görməsindİcra edilməsi və tətbiqi nisbətən asandır.
+#         Bu metod kompüter görməsində İcra edilməsi və tətbiqi nisbətən asandır.
 #     Fərqli ölçülərdə obyektlər üçün uyğunlaşır:
 #         Pəncərə ölçüsünü və stride dəyərini tənzimləyərək müxtəlif miqyaslı obyektləri aşkar edə bilərsiniz.
 #     Məkanlıq məlumatı saxlayır:

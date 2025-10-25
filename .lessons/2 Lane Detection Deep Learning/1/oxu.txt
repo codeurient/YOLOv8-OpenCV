@@ -20,4 +20,4 @@ Yolov8 arxitekoru bizim üçün qrafiklər yaradacaq və bu qrafiklərin dəyər
 NOT: GOOGLE COLAB üzərində işləməmiyimiz səbəbi,       `ultralytics`      kitabxanasıdır.    Bu kitabxananı VScode üzərində quraşdırarakən, çoxlu xətalar alırıq.
  `ultralytics`      kitabxanası digər kitabxanalar ilə uyğunlaşmır. Yaxud PYTHON versiyası ilə uyğunsuzluq yaranır. Hal-hazırda bizim PYTHON versiyasmız, 3.13-dür.
  Ancaq     `ultralytics`      kitabxanası    3.11.11 versiyasını tələb edir. Lakin bu versiyada çoxlu açıqlar olduğu üçün quraşdıra bilmirik və.s kimi bir çox fərqli
- problemlər yarandığı üçün Google Colab istifad
+ problemlər yarandığı üçün Google Colab istifade edirik.

@@ -1,6 +1,6 @@
 # Computer Vision sahəsində bir çox vəzifə (task) mövcuddur, və bunlar görüntü və video məlumatlarını analiz etməyə və onlardan mənalı 
 # nəticələr çıxarmağa yönəlmiş müxtəlif alqoritmalar və metodlarla yerinə yetirilir. Bu vəzifələrin hər biri fərqli məqsədlər üçün 
-# istifadə edilir. İndi qeyd etdiyiniz 4 əsas Computer Vision Task-ı daha ətraflı izah edək:
+# istifadə edilir. İndi qeyd etdiyimiz 4 əsas Computer Vision Task-ı daha ətraflı izah edək:
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -28,7 +28,7 @@
 
 # 3. Object Detection (Obyekt Tanıma):
 # Obyekt tanıma, bir şəkil və ya videodakı obyektləri müəyyənləşdirmək və izləmək prosesidir. Bu vəzifə yalnız obyektin hansı sinifə aid olduğunu 
-# tapmaqla kifayətlənmir, həm də obyektin şəkil üzərində harada yerləşdiyini göstərmək üçün boundinq box (sərhəd qutusu) əlavə edir. Obyekt tanıma 
+# tapmaqla kifayətlənmir, həm də obyektin şəkil üzərində harada yerləşdiyini göstərmək üçün bounding box (sərhəd qutusu) əlavə edir. Obyekt tanıma 
 # həmçinin çoxsaylı obyektlərin tanınmasını və yerini göstərməyə imkan verir.
             # Misal:
             # Bir şəkil üzərində pişik və it obyektlərini tanıyıb, onların yerləşdiyi yerləri göstərmək.
@@ -37,13 +37,9 @@
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# 4. Object Detection (Obyekt Tanıma):
-# Obyekt tanıma, bir şəkil və ya videodakı obyektləri müəyyənləşdirmək və izləmək prosesidir. Bu vəzifə yalnız obyektin hansı sinifə aid olduğunu 
-# tapmaqla kifayətlənmir, həm də obyektin şəkil üzərində harada yerləşdiyini göstərmək üçün boundinq box (sərhəd qutusu) əlavə edir. Obyekt tanıma 
-# həmçinin çoxsaylı obyektlərin tanınmasını və yerini göstərməyə imkan verir.
-            # Misal:
-            # Bir şəkil üzərində pişik və it obyektlərini tanıyıb, onların yerləşdiyi yerləri göstərmək.
-            # Videoda hərəkət edən obyektləri (məsələn, maşın və ya insan) izləmək.
+# 4. 
+
+
 
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------
 # --------------------------------------------------------------------------------------------------------------------------------------------------------------

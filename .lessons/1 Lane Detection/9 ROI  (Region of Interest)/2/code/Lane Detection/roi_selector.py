@@ -31,12 +31,12 @@ cv2.destroyAllWindows()
 
 
 # Sonra proqramı işə salırıq. Əgər belə bir xəta yaranarsa:        Fatal error in launcher: Unable to create process using '"d:\OpenCV\.venv\Scripts\python.....
-# Bu, Bu xətanın səbəbi, pip-in istifadə etdiyi Python mühitinin (virtual environment) düzgün qurulmaması və ya Python icraedici faylının mövcud olmamasıdır. 
+# Bu, xətanın səbəbi, pip-in istifadə etdiyi Python mühitinin (virtual environment) düzgün qurulmaması və ya Python icraedici faylının mövcud olmamasıdır. 
 
 # 1) Yeni virtual mühit yaradın:
 #                 a) Əvvəlcə mövcud .venv qovluğunu silin:   Remove-Item -Recurse -Force .venv
-#                 b) Yeni virtual mühit yaradın:             python -m venv .venv
-#                 c) Virtual mühiti aktivləşdirin:           .\.venv\Scripts\activate
+#                 b) Yeni virtual mühit yaradın:             python -m venv .myenv
+#                 c) Virtual mühiti aktivləşdirin:           .\.myenv\Scripts\activate
 #                 d) pip-i yenidən yoxlayın:                 pip --version
 
 # 2) Remove-Item -Recurse -Force .venv - bu əmri yazan zaman belə bir xəta olarsa: Remove-Item : Cannot remove item D:\YOLO......

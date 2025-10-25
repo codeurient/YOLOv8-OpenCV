@@ -83,8 +83,11 @@ while True:
 
     transformed_frame_mask = cv2.inRange(transformed_frame_hsv, LOWER, UPPER)
 
+
     histogram = np.sum(transformed_frame_mask[transformed_frame_mask.shape[0]//2:, :], axis=0) 
     middle_point = np.int32(histogram.shape[0]/2)
+
+
     # 1) middle_point variable ilə görüntünü iki hissəyə ayırdıqdan sonra aşağıdakı kod ilə soldan başlayaraq sağ yarı ortaya qədər və 
     # ortadan başlayaraq sağ sona qədər olan hissəni scan edirik. 
     left_side = np.argmax(histogram[:middle_point])
@@ -96,7 +99,7 @@ while True:
     transformed_frame_mask_copy = transformed_frame_mask.copy()
 
     # 2) Sliding Window -umuzu While loop-u içində yaradacağıq. Çünki görüntüyə birdən çox kvadrat yerləşdirmək lazımdır. Ancaq ilk öncə pəncərələrin 
-    # başlanğıc nöqtələrini təyin etməmiz lazımdır olduğu üçün `starting_y` adlı variable -yə 480 dəyərini veririk. 
+    # başlanğıc nöqtələrini təyin etməmiz lazım olduğu üçün `starting_y` adlı variable -yə 480 dəyərini veririk. 
     starting_y = 480
     # 5) starting_y dəyəri ilə hər iterasiyada maskanın müəyyən bir sətir aralığı işlənir .
     while starting_y > 0:

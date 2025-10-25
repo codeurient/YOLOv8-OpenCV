@@ -25,7 +25,7 @@ pts1 = np.float32([top_left, bottom_left, top_right, bottom_right])
 pts2 = np.float32([ [0,0], [0,480], [640,0], [640,480] ])  
 color = (0, 255, 0)
 
-path = "test_videos\\road.mp4"
+path = "Lane Detection\\road.mp4"
 cap = cv2.VideoCapture(path)
 ret, frame = cap.read()
 

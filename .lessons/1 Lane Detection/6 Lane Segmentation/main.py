@@ -12,7 +12,7 @@
                             # Rəng transformasiyaları (RGB-dən grayscale-ə keçid)
                             # ROI (Region of Interest) seçimi.
 
-                        # Tətbiqi sahələri:
+                        # Tətbiq sahələri:
                             # Şəkil keyfiyyətinin artırılması.
                             # Obyektlərin aşkarlanması (nümunə olaraq yol xəttlərinin, zolaqların təyin edilməsi).
                             # Avtomatik nömrə tanıma sistemləri.
@@ -36,7 +36,7 @@
                             # Transfer Learning (əvvəldən öyrədilmiş modellərin yenidən istifadəsi).
                             # Fully Convolutional Networks (FCN), U-Net və ya SegNet kimi seqmentasiya modelləri.
 
-                        # Tətbiqi sahələri:
+                        # Tətbiq sahələri:
                             # Obyekt tanıma (Object Detection).
                             # Yol zolaqlarının avtomatik seqmentasiyası.
                             # Sürücüsüz avtomobillərdə istifadə.

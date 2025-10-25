@@ -12,7 +12,7 @@ Yuxarıdakı əmr YOLOv8-in segmentasiya modeli ilə bir şəkil üzərində oby
 
 3) predict → Modeldən istifadə edərək şəkili analiz edir və nəticəni göstərir.
 
-4) model="runs/segment/yolov8_lane_segmentation/weights/best.pt" → YOLOv8 modelinizin çəkilərini (.pt faylı) göstərir.
+4) model="runs/segment/yolov8_lane_segmentation/weights/best.pt" → YOLOv8 modelinizin şəkilərini (.pt faylı) göstərir.
         - Burada "best.pt" sizin əvvəlcədən train etdiyiniz ən yaxşı modeli işə salır.
         - YOLO modeli yolda olan zolaqları (lane) aşkarlamaq üçün xüsusi olaraq öyrədilib.
 
@@ -24,7 +24,7 @@ Yuxarıdakı əmr YOLOv8-in segmentasiya modeli ilə bir şəkil üzərində oby
 
 
 
-`test_images` qovluğunun biz özümüz yaratdıq və onun içinə 0.jpg, 124.jpg, 142.jpg, 178.jpg, 200.jpg, 232.jpg şəkillərini yerləşdirdik. (Şəkil 1)
+`test_images` qovluğunu biz özümüz yaratdıq və onun içinə 0.jpg, 124.jpg, 142.jpg, 178.jpg, 200.jpg, 232.jpg şəkillərini yerləşdirdik. (Şəkil 1)
 Bu şəkilləri test məqsədli  `dataset`  içindən götürdüm ancaq eyni şəkillər olması vacib deyil. Üzərində yol xətti olan istənilən şəkil 
 istifadə etmək olar. 
 

@@ -1,6 +1,6 @@
 with open("coco_classes.txt", "r") as f:
     class_names = f.read().strip().split("\n")
-    # print(class_names)
+    print(class_names)
 
 print(class_names[4])  # person
 print(class_names[5])  # car
